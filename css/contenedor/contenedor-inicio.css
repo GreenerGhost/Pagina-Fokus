@@ -1,0 +1,12 @@
+.contenedor__inicio-boton {
+    width: 180px;
+    height: 40px;
+    padding: 8px;
+    border: none;
+    border-radius: 32px;
+    background: var(--botones-degradado);
+    color: white;
+    font-family: var(--montserrat);
+    font-weight: 600;
+    font-size: 1em;
+}
