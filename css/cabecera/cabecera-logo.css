@@ -4,9 +4,9 @@
     padding: 40px;
     align-self: center;
 }
-
+/* 
 @media screen and (min-width: 768px) {
     .cabecera__logo {
-        padding-top: 100px;
+        justify-content: space-between;
     }
-}
+} */

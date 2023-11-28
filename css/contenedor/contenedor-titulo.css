@@ -20,17 +20,16 @@
     .contenedor__titulo{
         width: 490px;
         height: 402px;
-        font-size: 2.986em;
     }
 
     .contenedor__titulo-arriba {
         font-size: 53px;
-        line-height: 79.5px;
+        line-height: 80.55px;
     }
 
     .contenedor__titulo-abajo {
         font-size: 53.7px;
-        line-height: 80.55px;
+        line-height: 79.5px;
     }
 }
 
