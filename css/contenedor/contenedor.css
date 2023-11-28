@@ -1,7 +1,9 @@
 .cuerpo {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 488px;
     justify-content: space-evenly;
-    padding-top: 30px;
 }
 
 .contenedor {
@@ -15,3 +17,16 @@
     align-items: center;
 }
 
+@media screen and (min-width: 768px) {
+    .cuerpo{
+        height: 784px;
+        justify-content: space-between;
+    }
+
+    .contenedor {
+        width: 500px;
+        height: 350px;
+        display: flex;
+        justify-content: space-around;
+    }
+}

@@ -1,0 +1,38 @@
+.contenedor__titulo {
+    align-self: center;
+    width: 251px;
+    height: 158px;
+    font-family: var(--unbounded);
+    font-size: 1.44em;
+    line-height: 150%;
+    color: #FFFFFF;
+}
+
+.contenedor__titulo-arriba {
+    font-weight: 200;
+}
+
+.contenedor__titulo-abajo {
+    font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+    .contenedor__titulo{
+        width: 490px;
+        height: 402px;
+        font-size: 2.986em;
+    }
+
+    .contenedor__titulo-arriba {
+        font-size: 53px;
+        line-height: 79.5px;
+    }
+
+    .contenedor__titulo-abajo {
+        font-size: 53.7px;
+        line-height: 80.55px;
+    }
+}
+
+
+
