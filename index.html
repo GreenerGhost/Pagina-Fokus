@@ -19,7 +19,10 @@
 
     <link rel="stylesheet" href="./css/contenedor/contenedor-titulo.css">
     <link rel="stylesheet" href="./css/contenedor/contenedor.css">
+
     <link rel="stylesheet" href="./css/contenedor/contenedor-botones.css">
+    <link rel="stylesheet" href="./css/contenedor/contenedor-botones-boton.css">
+
     <link rel="stylesheet" href="./css/contenedor/contenedor-temporizador.css">
     <link rel="stylesheet" href="./css/contenedor/contenedor-inicio.css">
 </head>
@@ -34,17 +37,18 @@
         </section>
         <section class="contenedor">
             <div class="contenedor__botones">
-                <button class="contenedor__botones-enfocar">Enfocar</button>
-                <button class="contenedor__botones-corto">Descanso corto</button>
-                <button class="contenedor__botones-largo">Descanso largo</button>
+                <button class="contenedor__botones-boton activo">Enfocar</button>
+                <button class="contenedor__botones-boton">Descanso corto</button>
+                <button class="contenedor__botones-boton">Descanso largo</button>
             </div>
             <div class="contenedor__temporizador">
                 <h1 class="contenedor__temporizador-cronometro">25:00</h1>
             </div>
             <div class="contenedor__inicio">
-                <button class="contenedor__inicio-boton">Iniciar</button>
+                <button class="contenedor__inicio-boton" onclick="actualizarTiempo();">Iniciar</button>
             </div>
         </section>
     </main>
+    <script src="main.js"></script>
 </body>
 </html>

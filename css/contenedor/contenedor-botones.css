@@ -4,42 +4,7 @@
     height: 35px;
 }
 
-.contenedor__botones-enfocar {
-    padding: 8px;
-    background: var(--background-cronometro-degradado);
-    border: var(--border-cronometro);
-    border-radius: 8px;
 
-    color: white;
-    font-family: var(--montserrat);
-    font-size: 0.694em;
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.contenedor__botones-corto {
-    padding: 8px;
-    background: transparent;
-    border: 2px solid transparent;
-    border-radius: 8px;
-
-    color: white;
-    font-family: var(--montserrat);
-    font-size: 0.694em;
-    cursor: pointer;
-}
-
-.contenedor__botones-largo {
-    padding: 8px;
-    background: transparent;
-    border: 2px solid transparent;
-    border-radius: 8px;
-
-    color: white;
-    font-family: var(--montserrat);
-    font-size: 0.694em;
-    cursor: pointer;
-}
 
 @media screen and (min-width: 768px) {
     .contenedor__botones {
@@ -47,18 +12,5 @@
         width: 434px;
         height: 43px;
         justify-content: space-evenly;
-    }
-
-    .contenedor__botones-enfocar {
-        font-weight: 600;
-        font-size: 1em;
-    }
-
-    .contenedor__botones-corto {
-        font-size: 1em;
-    }
-
-    .contenedor__botones-largo {
-        font-size: 1em;
     }
 }

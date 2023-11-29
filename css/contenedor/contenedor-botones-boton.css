@@ -1,0 +1,46 @@
+.contenedor__botones-boton {
+    padding: 8px;
+    border-radius: 8px;
+    background: transparent;
+    border: 2px solid transparent;
+
+    color: white;
+    font-family: var(--montserrat);
+    font-size: 0.694em;
+    cursor: pointer;
+}
+
+.activo, .contenedor__botones-boton:hover {
+    background: var(--background-cronometro-degradado);
+    border: var(--border-cronometro);
+    font-size: 0.694em;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    .contenedor__botones-boton {
+        padding: 8px;
+        border-radius: 8px;
+        background: transparent;
+        border: 2px solid transparent;
+
+        color: white;
+        font-family: var(--montserrat);
+        font-size: 1em;
+        cursor: pointer;
+    }
+
+    .activo, .contenedor__botones-boton:hover {
+        padding: 8px;
+        background: var(--background-cronometro-degradado);
+        border: var(--border-cronometro);
+        border-radius: 8px;
+
+        color: white;
+        font-family: var(--montserrat);
+        font-size: 1em;
+        font-weight: 700;
+        cursor: pointer;
+    }
+}

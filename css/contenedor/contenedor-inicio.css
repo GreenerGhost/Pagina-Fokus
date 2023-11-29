@@ -2,7 +2,7 @@
     width: 180px;
     height: 40px;
     padding: 8px;
-    border: none;
+    border: 2px solid var(--botones-degradado);
     border-radius: 32px;
     background: var(--botones-degradado);
     color: white;
@@ -15,4 +15,8 @@
     .contenedor__inicio-boton {
         margin-bottom: 20px;
     }
+}
+
+.contenedor__inicio-boton:hover {
+    border: 1px solid #FFFFFF;
 }
