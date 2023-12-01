@@ -27,28 +27,42 @@
     <link rel="stylesheet" href="./css/contenedor/contenedor-inicio.css">
 </head>
 <body>
-    <header class="cabecera">
-        <img class="cabecera__logo" src="./Logo-Favicons/Logo.png">
-    </header>
-    <main class="cuerpo">
-        <section class="contenedor__titulo">
-            <h1 class="contenedor__titulo-arriba">Optimiza tu productividad,</h1>
-            <h1 class="contenedor__titulo-abajo">sumérgete en lo que importa.</h1>
-        </section>
-        <section class="contenedor">
-            <div class="contenedor__botones">
-                <button class="contenedor__botones-boton activo">Enfocar</button>
-                <button class="contenedor__botones-boton">Descanso corto</button>
-                <button class="contenedor__botones-boton">Descanso largo</button>
-            </div>
-            <div class="contenedor__temporizador">
-                <h1 class="contenedor__temporizador-cronometro">25:00</h1>
-            </div>
-            <div class="contenedor__inicio">
-                <button class="contenedor__inicio-boton" onclick="actualizarTiempo();">Iniciar</button>
-            </div>
-        </section>
-    </main>
+    <section class="cubierta">
+        <header class="cabecera">
+            <img class="cabecera__logo" src="./Logo-Favicons/Logo.png">
+        </header>
+        <main class="cuerpo">
+            <section class="contenedor__titulo">
+                <h1 class="contenedor__titulo-arriba">Optimiza tu productividad,</h1>
+                <h1 class="contenedor__titulo-abajo">sumérgete en lo que importa.</h1>
+            </section>
+            <section class="contenedor">
+                <div class="contenedor__botones">
+                    <button class="contenedor__botones-boton activo">Enfocar</button>
+                    <button class="contenedor__botones-boton">Descanso corto</button>
+                    <button class="contenedor__botones-boton">Descanso largo</button>
+                </div>
+                <div class="contenedor__temporizador">
+                    <h1 class="contenedor__temporizador-cronometro">25:00</h1>
+                </div>
+                <div class="contenedor__inicio">
+                    <button class="contenedor__inicio-boton" onclick="actualizarTiempo();">Iniciar</button>
+                </div>
+            </section>
+        </main>
+        <!--Audios con activación de botón-->
+        <audio class="audio__tono-beep" src="./Musica-Tonos/Beep.mp3"></audio>
+        <audio class="audio__tono-play" src="./Musica-Tonos/Press play.wav"></audio>
+        <audio class="audio__tono-stop" src="./Musica-Tonos/Press stop button.mp3"></audio>
+        <audio class="audio__cuenta-regresiva" src="./Musica-Tonos/Cuenta regresiva y tono de llamada.mp3"></audio>
+        <!--Audios de fondo-->
+        <audio class="control__audio" autoplay loop>
+            <source src="./Musica-Tonos/Opciones musica de fondo/Luna Rise, Part One.mp3">
+            <source src="./Musica-Tonos/Opciones musica de fondo/Intra-Neural.mp3">
+            El navegador no puede reproducir el audio
+        </audio>
+    </section>
+    
     <script src="main.js"></script>
 </body>
 </html>

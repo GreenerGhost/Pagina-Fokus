@@ -4,6 +4,9 @@ var botones = document.getElementsByClassName("contenedor__botones-boton");
 var cronometro = document.getElementsByClassName("contenedor__temporizador-cronometro");
 var temporizadorBoton = document.getElementsByClassName("contenedor__inicio-boton");
 
+// Control de Volumen de audio de fondo de página
+document.getElementsByClassName("control__audio")[0].volume = 0.2;
+
 // Se declaran valores de cronometro
 var enfocar = 25;
 var descansoCorto = 5;
@@ -49,6 +52,10 @@ for (let contador = 0; contador < botones.length; contador++) {
     })
 }
 
+// Función para reproducir audio
+function reproducirAudio(audio) {
+    document.getElementsByClassName(`${audio}`)[0].play();
+}
 
 
 // Inicia Temporizador y cambia botón de estado
@@ -60,8 +67,11 @@ function actualizarTiempo() {
     // Cambia de estado el botón
     let estado = temporizadorTexto === "Iniciar" ? "Detener" : "Iniciar";
     temporizadorBoton[0].innerHTML = estado;
-
-    if (estado == "Detener") {
+    if (estado === "Iniciar") {
+        reproducirAudio("audio__tono-stop");
+    }
+    if (estado === "Detener") {
+        reproducirAudio("audio__tono-play");
         detenerTemporizador();
     }
     if (opcion === 'Enfocar') {
@@ -77,20 +87,27 @@ function actualizarTiempo() {
 
 // Aquí se inicializa el Temporizador
 function iniciarTemporizador () {
+    // función para detener el temporizador
     if (intervalo) {
         detenerTemporizador();
         return;
     }
-
+    
     intervalo = setInterval(function() {
         // Muestra tiempo en pantalla
         tiempoPantalla(minutos, segundos);
+        
+        // Función para cuenta regresiva
+        if (minutos == 0 && segundos == 13) {
+            reproducirAudio("audio__cuenta-regresiva");
+        }
 
         // Cambia el tiempo
         segundos--;
         if (segundos === -1) {
             minutos--;
             if (minutos === -1) {
+                reproducirAudio("audio__tono-beep");
                 clearInterval(intervalo);
                 tiempoPantalla(0,0);
                 //alert("Se ha terminado el tiempo");
