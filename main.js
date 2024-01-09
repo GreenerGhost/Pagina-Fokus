@@ -1,11 +1,11 @@
 // Sección para animar botónes
 var botones = document.getElementsByClassName("contenedor__botones-boton");
 // Sección para temporizador
-var cronometro = document.getElementsByClassName("contenedor__temporizador-cronometro");
-var temporizadorBoton = document.getElementsByClassName("contenedor__inicio-boton");
+var cronometro = document.querySelector(".contenedor__temporizador-cronometro");
+var temporizadorBoton = document.querySelector(".contenedor__inicio-boton");
 
 // Control de Volumen de audio de fondo de página
-document.getElementsByClassName("control__audio")[0].volume = 0.2;
+document.querySelector(".control__audio").volume = 0.2;
 
 // Se declaran valores de cronometro
 var enfocar = 25;
@@ -20,30 +20,34 @@ function tiempoPantalla(min, seg) {
     if (seg < 10) {
         seg = '0' + seg;
     }
-    cronometro[0].innerHTML = `${min}:${seg}`;
+    cronometro.innerHTML = `${min}:${seg}`;
 }
 
 // Animación botones enfocar y descansos
-for (let contador = 0; contador < botones.length; contador++) {
-    botones[contador].addEventListener("click", function () {
+for (let posicion = 0; posicion < botones.length; posicion++) {
+    botones[posicion].addEventListener("click", function () {
+        console.log(posicion);
         segundos = 0;
-        let actual = document.getElementsByClassName("activo");
-        actual[0].className = actual[0].className.replace("activo", "");
+
+        let actual = document.querySelector(".activo");
+        actual.className = actual.className.replace("activo", "");
         this.className += " activo";
-        let opcion = document.getElementsByClassName("activo")[0].innerHTML;
+        
+        let opcion = document.querySelector(".activo").innerHTML;
+        // Estado iniciar de los elementos con sus respectivos minutos
         if (opcion === 'Enfocar') {
             detenerTemporizador();
-            temporizadorBoton[0].innerHTML = "Iniciar";
+            temporizadorBoton.innerHTML = "Iniciar";
             minutos = enfocar;
             tiempoPantalla(enfocar, segundos);
         } else if (opcion === 'Descanso corto') {
             detenerTemporizador();
-            temporizadorBoton[0].innerHTML = "Iniciar";
+            temporizadorBoton.innerHTML = "Iniciar";
             minutos = descansoCorto;
             tiempoPantalla(descansoCorto, segundos);
         } else if (opcion === 'Descanso largo') {
             detenerTemporizador();
-            temporizadorBoton[0].innerHTML = "Iniciar";
+            temporizadorBoton.innerHTML = "Iniciar";
             minutos = descansoLargo;
             tiempoPantalla(descansoLargo, segundos);
         } else {
@@ -54,19 +58,19 @@ for (let contador = 0; contador < botones.length; contador++) {
 
 // Función para reproducir audio
 function reproducirAudio(audio) {
-    document.getElementsByClassName(`${audio}`)[0].play();
+    document.querySelector(`.${audio}`).play();
 }
 
 
 // Inicia Temporizador y cambia botón de estado
 function actualizarTiempo() {
-    var temporizadorTexto = temporizadorBoton[0].innerHTML;
+    var temporizadorTexto = temporizadorBoton.innerHTML;
     // Se busca cual es la opción activa
-    let opcion = document.getElementsByClassName("activo")[0].innerHTML;
+    let opcion = document.querySelector(".activo").innerHTML;
     
     // Cambia de estado el botón
     let estado = temporizadorTexto === "Iniciar" ? "Detener" : "Iniciar";
-    temporizadorBoton[0].innerHTML = estado;
+    temporizadorBoton.innerHTML = estado;
     if (estado === "Iniciar") {
         reproducirAudio("audio__tono-stop");
     }
@@ -74,14 +78,11 @@ function actualizarTiempo() {
         reproducirAudio("audio__tono-play");
         detenerTemporizador();
     }
-    if (opcion === 'Enfocar') {
-        iniciarTemporizador();
-    } else if (opcion === 'Descanso corto') {
-        iniciarTemporizador();
-    } else if (opcion === 'Descanso largo') {
+    // Al iniciar cualquiera de los tres estados, se iniciará el temporizador
+    if (opcion === 'Enfocar' || opcion === 'Descanso corto' || opcion === 'Descanso largo') {
         iniciarTemporizador();
     } else {
-        console.log("Esto no se debería mostrar en pantalla");
+        alert(`Ha ocurrido un error inesperado, por favor, refrescar la página`);
     }
 }
 
